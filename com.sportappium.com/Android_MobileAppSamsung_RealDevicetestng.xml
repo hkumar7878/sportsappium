@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Functional Test Suite_SamsungReal" verbose="1" parallel="false">
+    
+  <listeners>
+	<listener class-name="ErrorCollectors.TestListenerAdapter" />
+</listeners>  
+ <test name="Samsung7" >
+  	<parameter name="deviceID" value="42003a0fd3148479"></parameter> 
+ 		<classes> 				
+				<class name="runner.com.cdNewCar.AndroidWebFramework.Runner_NewCarVerification"></class>	
+				             
+				
+		</classes>    			
+ </test>
+
+</suite> <!-- Suite -->

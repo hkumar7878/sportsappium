@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Master Suite_AndroidMobileWeb" verbose="1" thread-count="2" parallel="suites">
+
+    
+ <listeners>
+	<listener class-name="ErrorCollectors.TestListenerAdapter" />
+</listeners>
+    
+    
+<suite-files>    
+      <!--  <suite-file path="D:\Selenium Latest Framework\Ecommerce\Firefox_testng.xml" />  --> 
+      <!--  <suite-file path="D:\Ecommer_Grid\Ecommere_Grid\Chrome_testng.xml" /> -->
+       <!--  <suite-file path="${project.basedir}\AndroidMobileAppSamsungGalaxy1Emulatortestng.xml" /> -->
+       
+      <suite-file path="Android_MobileAppSamsungGalaxy1_Emulatortestng.xml" />     
+      <suite-file path="Android_MobileAppSamsung_RealDevicetestng.xml" />
+        
+</suite-files>
+
+</suite> <!-- Suite -->
