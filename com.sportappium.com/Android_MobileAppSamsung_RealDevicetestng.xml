@@ -8,10 +8,7 @@
  <test name="Samsung7" >
   	<parameter name="deviceID" value="42003a0fd3148479"></parameter> 
  		<classes> 				
-				<class name="runner.com.cdNewCar.AndroidWebFramework.Runner_NewCarVerification"></class>	
-				             
-				
+				<class name="runner.com.adidasHomePage.Runner_HomePageVerification"></class>					            				
 		</classes>    			
  </test>
-
 </suite> <!-- Suite -->

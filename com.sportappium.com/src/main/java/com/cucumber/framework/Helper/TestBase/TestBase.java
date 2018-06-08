@@ -42,18 +42,19 @@ public class TestBase {
 	public static String deviceID=null;
 	public static String XMLtestCaseName;
 	String app_URL=null;
+	public static String strErrMsg_GenLib;
 	static DesiredCapabilities cap= new DesiredCapabilities();
 	
-	public static ExtentReports report;
+	//public static ExtentReports report;
 	public static ExtentReports androidEmulatorRPT;
 	
 	public static ExtentReports androidReadDeviceRPT;
-    public static ExtentReports report1;
+    //public static ExtentReports report1;
     
-    public static ExtentTest FF_logger;
+   // public static ExtentTest FF_logger;
     public static ExtentTest androidEmulator_logger1;
     
-    public static ExtentTest CH_logger;
+   // public static ExtentTest CH_logger;
     public static ExtentTest androidReadDevice_logger1;
     public static String scenarioName;
     public static URL url;
@@ -84,9 +85,6 @@ public class TestBase {
 		System.out.println("---------Again restarting the driver instance for next scenarios--------");
 		//setUpAndroidDriver(deviceID,XMLtestCaseName);
 	}
-	
-	
-	
 	
 	public static AppiumDriver getAnroidBrowserObject(String deviceID,String tcName) throws Exception
 	{

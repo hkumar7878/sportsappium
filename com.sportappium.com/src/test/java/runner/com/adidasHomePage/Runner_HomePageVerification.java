@@ -1,9 +1,11 @@
-package runner.com.cdNewCar.AndroidWebFramework;
+package runner.com.adidasHomePage;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.BrowserType;
@@ -32,20 +34,20 @@ import cucumber.api.java.Before;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 
-@CucumberOptions(features={"classpath:featurefile/NewCar/NewCar.feature"}
+@CucumberOptions(features={"classpath:featurefile/AdidasHomePage/HomePage.feature"}
 ,glue={"classpath:com.cucumber.framework.stepdefinition",
 	   "classpath:com.cucumber.framework.Helper"},
 		plugin = {"html:target/cucumber-html-report",
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json"},
 	
-      //  tags ={"@TC_001,@TC_002","~@TC_003","~@TC_04"},
-       tags ={"~@TC_001","@TC_002","~@TC_003","~@TC_04"},
-		dryRun=false,
-		monochrome = false
+      //tags ={"@TC_001,@TC_002","~@TC_003","~@TC_04"},
+      tags ={"~@TC_001","@TC_002","~@TC_003","~@TC_04"},
+      dryRun=true,
+	  monochrome = false
 )
 
-public class Runner_NewCarVerification extends TestBase{
+public class Runner_HomePageVerification extends TestBase{
 	
 	
 	TestBase testbaseObj= new TestBase();
@@ -85,10 +87,11 @@ public class Runner_NewCarVerification extends TestBase{
 	            {
 		 			System.out.println("Step 1 of report start and browserID is " + browserID);	
 		 			System.out.println("Inside Before Test class of BASE CLASS: Chrome");
-	                String filePath=System.getProperty("user.dir")+"\\"+ "Samsung_RealDevice.html";
+	                String filePath=System.getProperty("user.dir")+"\\"+ new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date())+ "Samsung_RealDevice.html";
 	                androidReadDeviceRPT=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
+	                //androidReadDeviceRPT=new ExtentReports(new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date()) + "reports.html",filePath,true, DisplayOrder.OLDEST_FIRST);
 	                System.out.println("Inside Before Test class: Chrome & Extent Report for" + browserID + "is Initilized");
-	              //  TestBase.setUpAndroidDriver(deviceID,XMLtestCaseName);
+	             
 	            }	
 		 		
 		 		else if(XMLtestCaseName.contains("Samsung Galaxy Emulator"))
@@ -98,7 +101,7 @@ public class Runner_NewCarVerification extends TestBase{
 	                String filePath=System.getProperty("user.dir")+"\\"+ "Emulator1.html";
 	                androidEmulatorRPT=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
 	                System.out.println("Inside Before Test class: Chrome & Extent Report for" + browserID + "is Initilized");
-	              //  TestBase.setUpAndroidDriver(deviceID,XMLtestCaseName);
+	           
 	            }
 		 	}
 		 	
@@ -106,9 +109,7 @@ public class Runner_NewCarVerification extends TestBase{
 		 	{
 		 		System.out.println(e.getMessage());
 		 	}
-	 	}
-	
-	
+	 	}	
 	@Test()
 	public void runCukes()
 	{

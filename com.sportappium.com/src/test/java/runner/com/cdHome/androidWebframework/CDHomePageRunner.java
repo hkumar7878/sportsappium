@@ -75,7 +75,7 @@ public class CDHomePageRunner extends TestBase{
 		 			System.out.println("Step 1 of report start");
 		 			System.out.println("Inside Before Test class of BASE CLASS: Chrome");
 	                String filePath=System.getProperty("user.dir")+"\\"+ "TestReportsFirefox.html";
-	                report1=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
+	               // report1=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
 	                System.out.println("Inside Before Test class: Chrome & Extent Report for" + browserID + "is Initilized");
 	}
 		 	}

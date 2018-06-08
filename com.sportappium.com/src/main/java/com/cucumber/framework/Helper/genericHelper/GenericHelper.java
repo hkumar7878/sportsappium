@@ -12,10 +12,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-public class GenericHelper{
+public class GenericHelper {
 
 	private static final Logger log=LoggerHelper.getLogger(GenericHelper.class);
-	public static String exception_Msg;
+	//public static String strErrMsg_GenLib;
 	
 	public String readValueFromElement(WebElement element)
 	{
@@ -62,6 +62,11 @@ public class GenericHelper{
 		catch (Exception ex)
 		{
 			log.info(ex);
+			System.out.println(ex.getMessage());
+			log.info("Throwing run time exception for Element is not displayed for elemenet  " + element.getTagName().toString());
+			//TestBase.strErrMsg_GenLib=ex.getMessage()+ element.getTagName().toString();
+			TestBase.strErrMsg_GenLib=ex.getMessage();
+			System.out.println(TestBase.strErrMsg_GenLib);
 			return false;
 		}
 	}
@@ -86,11 +91,12 @@ public class GenericHelper{
 			}
 		}
 		
-		catch (RuntimeException e)
+		catch (Exception ex)
 		{
-			System.out.println(e.getMessage());
+			System.out.println(ex.getMessage());
 			log.info("Throwing run time exception for Element is not displayed for elemenet  " + element.getTagName().toString());
-			exception_Msg=e.getMessage()+ element.getTagName().toString();
+			TestBase.strErrMsg_GenLib=ex.getMessage();
+			//strErrMsg_GenLib=e.getMessage()+ element.getTagName().toString();
 			
 		}
 		return flag;
