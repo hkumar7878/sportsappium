@@ -29,6 +29,7 @@ public class PG_HomePage extends TestBase{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		waitHelper = new WaitHelper(driver);
+		//commit
 		//waitHelper.waitForElement(driver, womenMenu,ObjectRepo.reader.getExplicitWait());
 		//waitHelper.waitForElement(driver,20,txtHomePageHd);
 		//waitHelper.waitForElementVisible(locator, timeOutInSeconds, pollingEveryInMillSec);(driver,20,txtHomePageHd);
