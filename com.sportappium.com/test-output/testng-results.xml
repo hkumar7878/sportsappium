@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Functional Test Suite_SamsungReal" duration-ms="38515" started-at="2018-06-08T12:57:37Z" finished-at="2018-06-08T12:58:16Z">
+    <groups>
+    </groups>
+    <test name="Samsung7" duration-ms="38515" started-at="2018-06-08T12:57:37Z" finished-at="2018-06-08T12:58:16Z">
+      <class name="runner.com.adidasHomePage.Runner_HomePageVerification">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:runner.com.adidasHomePage.Runner_HomePageVerification@6043cd28]" name="beforeSuite" is-config="true" duration-ms="9" started-at="2018-06-08T18:27:37Z" finished-at="2018-06-08T18:27:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="onBeforeTestMobile(java.lang.String, org.testng.ITestContext)[pri:0, instance:runner.com.adidasHomePage.Runner_HomePageVerification@6043cd28]" name="onBeforeTestMobile" is-config="true" duration-ms="213" started-at="2018-06-08T18:27:37Z" finished-at="2018-06-08T18:27:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[42003a0fd3148479]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6ceb7b5e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onBeforeTestMobile -->
+        <test-method status="PASS" signature="runCukes()[pri:0, instance:runner.com.adidasHomePage.Runner_HomePageVerification@6043cd28]" name="runCukes" duration-ms="37920" started-at="2018-06-08T18:27:37Z" finished-at="2018-06-08T18:28:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runCukes -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:runner.com.adidasHomePage.Runner_HomePageVerification@6043cd28]" name="afterTest" is-config="true" duration-ms="368" started-at="2018-06-08T18:28:15Z" finished-at="2018-06-08T18:28:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:runner.com.adidasHomePage.Runner_HomePageVerification@6043cd28]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-06-08T18:28:16Z" finished-at="2018-06-08T18:28:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- runner.com.adidasHomePage.Runner_HomePageVerification -->
+    </test> <!-- Samsung7 -->
+  </suite> <!-- Functional Test Suite_SamsungReal -->
+</testng-results>
