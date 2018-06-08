@@ -43,7 +43,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 	
       //tags ={"@TC_001,@TC_002","~@TC_003","~@TC_04"},
       tags ={"~@TC_001","@TC_002","~@TC_003","~@TC_04"},
-      dryRun=true,
+      dryRun=false,
 	  monochrome = false
 )
 

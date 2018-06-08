@@ -1,7 +1,6 @@
-package com.cucumber.framework.stepdefinition.Men;
+package com.cucumber.framework.stepdefinition.HomePage;
 
 import org.apache.log4j.Logger;
-
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.pageobject.PG_HomePage;
@@ -10,7 +9,7 @@ import com.cucumber.framework.stepdefinition.HomePage.TC_01_HomePageDisplayVerif
 import cucumber.api.java.en.Then;
 import io.appium.java_client.AppiumDriver;
 
-public class TC_001_Verify_Men_Menu_Display_On_HomePage {
+public class TC_002_Verify_Men_Menu_Display_On_HomePage {
 	
 private final Logger log= LoggerHelper.getLogger(TC_01_HomePageDisplayVerification.class);
 	
@@ -26,7 +25,7 @@ private final Logger log= LoggerHelper.getLogger(TC_01_HomePageDisplayVerificati
 		String stepName="Verify Men menu on Adidas Home page";
 		String passResult="Men Menu on Home page is displayed successfully";
 		String failResult="Men Menu on Home page is NOT displayed";
-		homePgObject.verifyHomePage(TestBase.deviceID,stepName,passResult,failResult);
+		homePgObject.verifyHomePageMenu(TestBase.deviceID, "Men", stepName, passResult, failResult);
 	    
 	}
 

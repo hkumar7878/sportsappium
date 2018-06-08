@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import com.cucumber.framework.Helper.JavaScript.JavaScriptHelper;
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.Helper.Wait.WaitHelper;
@@ -21,6 +22,7 @@ public class PG_HomePage extends TestBase{
 	private final Logger log = LoggerHelper.getLogger(PG_HomePage_AndroidWeb.class);
 	WaitHelper waitHelper;
 	GenericHelper generichelper= new GenericHelper();
+	JavaScriptHelper javascriptHelper;
 	static boolean flag;
 	public static String err_Msg;
 	
@@ -31,7 +33,7 @@ public class PG_HomePage extends TestBase{
 		waitHelper = new WaitHelper(driver);
 		//commit
 		//waitHelper.waitForElement(driver, womenMenu,ObjectRepo.reader.getExplicitWait());
-		//waitHelper.waitForElement(driver,20,txtHomePageHd);
+		waitHelper.waitForElement(driver,20,imgAdidasLogo);
 		//waitHelper.waitForElementVisible(locator, timeOutInSeconds, pollingEveryInMillSec);(driver,20,txtHomePageHd);
 	}
 	
@@ -84,14 +86,16 @@ public class PG_HomePage extends TestBase{
 	
 	public void verifyHomePageMenu(String deviceID,String menuName,String stepName,String passResult,String failResult)
 	{
+		javascriptHelper= new JavaScriptHelper(driver);
 		try
 		{
 			log.info("---------Checking Menu for------------"  +menuName);
 			if(menuName=="Men")
 			{
 				
-				
-				flag=GenericHelper.isDisplayed(imgAdidasLogo);
+				javascriptHelper.scrollIntoView(menuMen);
+				waitHelper.waitForElement(driver,20,menuMen);
+				flag=GenericHelper.isDisplayed(menuMen);
 				Assert.assertTrue(flag, menuName + "is displayed successfully");
 				System.out.println("---------Adidas home page is displayed---------");
 				
