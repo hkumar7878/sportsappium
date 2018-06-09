@@ -41,8 +41,8 @@ import cucumber.api.testng.TestNGCucumberRunner;
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json"},
 	
-      //tags ={"@TC_001,@TC_002","~@TC_003","~@TC_04"},
-      tags ={"~@TC_001","@TC_002","~@TC_003","~@TC_04"},
+      //tags ={"@TC_001,@TC_002,@TC_003","~@TC_04"},
+     tags ={"@TC_001","~@TC_002","~@TC_003","~@TC_04"},
       dryRun=false,
 	  monochrome = false
 )
@@ -87,7 +87,8 @@ public class Runner_HomePageVerification extends TestBase{
 	            {
 		 			System.out.println("Step 1 of report start and browserID is " + browserID);	
 		 			System.out.println("Inside Before Test class of BASE CLASS: Chrome");
-	                String filePath=System.getProperty("user.dir")+"\\"+ new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date())+ "Samsung_RealDevice.html";
+		 			String filePath=System.getProperty("user.dir")+"\\"+ new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date())+ "Samsung_RealDevice.html";
+		 			//String filePath=System.getProperty("user.dir")+"\\" +"Samsung_RealDevice" + new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date() + "reports.html");
 	                androidReadDeviceRPT=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
 	                //androidReadDeviceRPT=new ExtentReports(new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date()) + "reports.html",filePath,true, DisplayOrder.OLDEST_FIRST);
 	                System.out.println("Inside Before Test class: Chrome & Extent Report for" + browserID + "is Initilized");
