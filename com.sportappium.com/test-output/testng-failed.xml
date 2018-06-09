@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Functional Test Suite_SamsungReal]">
+  <parameter name="deviceID" value="42003a0fd3148479"/>
+  <listeners>
+    <listener class-name="ErrorCollectors.TestListenerAdapter"/>
+  </listeners>
+  <test name="Samsung7(failed)">
+    <parameter name="deviceID" value="42003a0fd3148479"/>
+    <classes>
+      <class name="runner.com.adidasHomePage.Runner_HomePageVerification">
+        <methods>
+          <include name="onBeforeTestMobile"/>
+          <include name="beforeSuite"/>
+          <include name="afterTest"/>
+          <include name="runCukes"/>
+        </methods>
+      </class> <!-- runner.com.adidasHomePage.Runner_HomePageVerification -->
+    </classes>
+  </test> <!-- Samsung7(failed) -->
+</suite> <!-- Failed suite [Functional Test Suite_SamsungReal] -->
