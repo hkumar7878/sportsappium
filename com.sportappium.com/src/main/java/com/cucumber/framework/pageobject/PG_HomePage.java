@@ -100,6 +100,15 @@ public class PG_HomePage extends TestBase{
 				System.out.println("---------Adidas home page is displayed---------");
 				
 			}
+			
+			else if(menuName=="Women")
+			{
+				javascriptHelper.scrollIntoView(menuWomen);
+				waitHelper.waitForElement(driver,20,menuWomen);
+				flag=GenericHelper.isDisplayed(menuWomen);
+				Assert.assertTrue(flag, menuWomen + "is displayed successfully");
+				System.out.println("---------Women Menu on Home page is displayed---------");
+			}
 			if(deviceID.contains("42003a0fd3148479"))
 			{
 				androidReadDevice_logger1.log(LogStatus.PASS, stepName,passResult);
