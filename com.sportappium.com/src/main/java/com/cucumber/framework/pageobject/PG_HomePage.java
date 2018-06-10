@@ -1,11 +1,16 @@
 package com.cucumber.framework.pageobject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import com.cucumber.framework.Helper.DropDown.DropDownHelper;
 import com.cucumber.framework.Helper.JavaScript.JavaScriptHelper;
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
@@ -30,11 +35,8 @@ public class PG_HomePage extends TestBase{
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		waitHelper = new WaitHelper(driver);
-		//commit
-		//waitHelper.waitForElement(driver, womenMenu,ObjectRepo.reader.getExplicitWait());
+		waitHelper = new WaitHelper(driver);		
 		waitHelper.waitForElement(driver,20,imgAdidasLogo);
-		//waitHelper.waitForElementVisible(locator, timeOutInSeconds, pollingEveryInMillSec);(driver,20,txtHomePageHd);
 	}
 	
 	@FindBy(xpath="//span[@class='header-item-logo']")
@@ -45,6 +47,9 @@ public class PG_HomePage extends TestBase{
 	
 	@FindBy(xpath="//div[@id='menu']//a[text()='Women']")
 	WebElement menuWomen;
+	
+	@FindBy(xpath="//li[@class='main-items itemexpanded']")
+	List<WebElement> menuMenOptions;
 	
 	public void verifyHomePage(String deviceID,String stepName,String passResult,String failResult)
 	{
@@ -66,9 +71,8 @@ public class PG_HomePage extends TestBase{
 		}
 		
 		
-		catch(Throwable e)
+		catch(Exception e)
 		{
-			e.getMessage();
 			System.out.println(e.getMessage());
 			log.info(e.getMessage());
 			if(deviceID.contains("42003a0fd3148479"))
@@ -82,9 +86,26 @@ public class PG_HomePage extends TestBase{
 			}
 			ErrorCollector.addVerificationFailure(e);
 		}
+		
+		catch (AssertionError e)
+		{
+			System.out.println(e.getMessage());
+			log.info(e.getMessage());
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,failResult);				
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				androidEmulator_logger1.log(LogStatus.FAIL, stepName,failResult);
+			}
+			ErrorCollector.addVerificationFailure(e);
+		}
 	}
 	
 	public void verifyHomePageMenu(String deviceID,String menuName,String stepName,String passResult,String failResult)
+
 	{
 		javascriptHelper= new JavaScriptHelper(driver);
 		try
@@ -121,23 +142,178 @@ public class PG_HomePage extends TestBase{
 		}
 		
 		
-		catch(Throwable e)
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			log.info(e.getMessage());
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,e.getMessage());				
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				androidEmulator_logger1.log(LogStatus.FAIL, stepName,e.getMessage());
+			}
+			ErrorCollector.addVerificationFailure(e);
+			
+		}	
+
+		catch (AssertionError e)
+		{
+			System.out.println(e.getMessage());
+			log.info(e.getMessage());
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,failResult);				
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				androidEmulator_logger1.log(LogStatus.FAIL, stepName,failResult);
+			}
+			ErrorCollector.addVerificationFailure(e);
+		}
+	}
+	public void clickBtn(String deviceID,String menuName,String stepName,String passResult,String failResult)
+	{
+		javascriptHelper= new JavaScriptHelper(driver);
+		try
+		{
+			log.info("---------Clicking------------"  +menuName);
+			if(menuName=="Men")
+			{
+				
+				javascriptHelper.scrollIntoView(menuMen);
+				waitHelper.waitForElement(driver,20,menuMen);
+				flag=GenericHelper.click(menuMen);
+				Assert.assertTrue(flag, menuName + "is clicked successfully");
+				System.out.println("---------Men Menu is clicked successfully---------");
+				
+			}
+			
+			else if(menuName=="Women")
+			{
+				javascriptHelper.scrollIntoView(menuWomen);
+				waitHelper.waitForElement(driver,20,menuWomen);
+				flag=GenericHelper.click(menuMen);
+				Assert.assertTrue(flag, menuWomen + "is displayed successfully");
+				System.out.println("---------Women Menu on Home page is displayed---------");
+			}
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.PASS, stepName,passResult);
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				androidEmulator_logger1.log(LogStatus.PASS, stepName,passResult);
+			}
+		}
+		
+		
+		catch(Exception e)
+		{
+			
+			System.out.println(e.getMessage());
+			log.info(e.getMessage());
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,e.getMessage());
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				androidEmulator_logger1.log(LogStatus.FAIL, stepName,e.getMessage());
+			}
+			ErrorCollector.addVerificationFailure(e);
+		}
+		
+		catch (AssertionError e)
 		{
 			e.getMessage();
 			System.out.println(e.getMessage());
 			log.info(e.getMessage());
 			if(deviceID.contains("42003a0fd3148479"))
 			{
-				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,strErrMsg_GenLib);
+				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,failResult);				
 			}
 			
 			else if(deviceID.contains("emulator-5554"))
 			{
-				androidEmulator_logger1.log(LogStatus.FAIL, stepName,strErrMsg_GenLib);
+				androidEmulator_logger1.log(LogStatus.FAIL, stepName,failResult);
 			}
 			ErrorCollector.addVerificationFailure(e);
 		}
-	}
+	}	
 	
 	
+	public void verifyMenuOptions(String deviceID,String menuName,String stepName,String passResult,String failResult,List<String> options)
+	{
+		javascriptHelper= new JavaScriptHelper(driver);
+		List<String> optionValues=new ArrayList<String>();
+ 		try
+		{
+			log.info("---------Checking options for------------"  +menuName);
+			if(menuName=="Men")
+			{
+				optionValues=DropDownHelper.getAllOptionsUsingNonSelect(menuMenOptions);
+				Assert.assertTrue(flag, menuName + "is clicked successfully");
+				System.out.println("---------Men Menu is clicked successfully---------");
+				
+			}
+			
+			else if(menuName=="Women")
+			{
+				waitHelper.waitForElement(driver,20,menuWomen);
+				flag=GenericHelper.click(menuMen);
+				Assert.assertTrue(flag, menuWomen + "is displayed successfully");
+				System.out.println("---------Women Menu on Home page is displayed---------");
+			}
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.PASS, stepName,passResult);
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				androidEmulator_logger1.log(LogStatus.PASS, stepName,passResult);
+			}
+		}
+		
+		
+		catch(Exception e)
+		{
+			
+			System.out.println(e.getMessage());
+			log.info(e.getMessage());
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,e.getMessage());
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				androidEmulator_logger1.log(LogStatus.FAIL, stepName,e.getMessage());
+			}
+			ErrorCollector.addVerificationFailure(e);
+		}
+		
+		catch (AssertionError e)
+		{
+			e.getMessage();
+			System.out.println(e.getMessage());
+			log.info(e.getMessage());
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,failResult);				
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				androidEmulator_logger1.log(LogStatus.FAIL, stepName,failResult);
+			}
+			ErrorCollector.addVerificationFailure(e);
+		}
+	}	
 }

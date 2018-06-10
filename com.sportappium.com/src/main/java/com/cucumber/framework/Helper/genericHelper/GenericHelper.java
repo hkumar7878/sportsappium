@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 public class GenericHelper {
 
 	private static final Logger log=LoggerHelper.getLogger(GenericHelper.class);
-	//public static String strErrMsg_GenLib;
+	
 	
 	public String readValueFromElement(WebElement element)
 	{

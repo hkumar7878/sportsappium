@@ -58,3 +58,13 @@ Given navigate to web site
 Then user verifies home page is displayed
 Then verify Brands drop down is displayed on Home Page
 
+@TC_006
+
+Scenario: To verify the display of Men Section
+
+Given navigate to web site
+Then user verifies home page is displayed
+Then verify Men drop down is displayed on Home Page
+When click on Men menu drop down
+Then men menu drop down displays correct drop down options
+

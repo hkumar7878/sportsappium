@@ -2,6 +2,7 @@ package com.cucumber.framework.Helper.DropDown;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,14 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
-
-
-
-
-
-
-
-
+import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.Helper.Wait.WaitHelper;
 import com.cucumber.framework.Helper.genericHelper.GenericHelper;
 
@@ -152,6 +146,27 @@ public class DropDownHelper {
 		catch (Exception e)
 		{
 			System.out.println(e.getMessage());
+		}
+		return dropDownValues;
+	}
+	
+	public static List<String> getAllOptionsUsingNonSelect(List<WebElement> dropDown)
+	{
+		List<String> dropDownValues= new ArrayList<String>();
+		
+		try
+		{
+			Iterator<WebElement> allOptions=dropDown.iterator();
+			while(allOptions.hasNext())
+			{
+				WebElement option=allOptions.next();
+				System.out.println(option.getText());
+				dropDownValues.add(option.getText());
+			}
+		}
+		catch (Exception e)
+		{
+			TestBase.strErrMsg_GenLib=e.getMessage();
 		}
 		return dropDownValues;
 	}

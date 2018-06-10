@@ -1,36 +1,20 @@
 package runner.com.adidasHomePage;
 
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
 
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.cucumber.framework.Helper.TestBase.TestBase;
-import com.cucumber.framework.configreader.ObjectRepo;
-import com.cucumber.framework.configreader.PropertyFileReader;
 import com.cucumber.framework.utility.ActionAfterClass;
 import com.relevantcodes.extentreports.DisplayOrder;
 import com.relevantcodes.extentreports.ExtentReports;
-
 import cucumber.api.CucumberOptions;
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 
@@ -42,7 +26,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
         "usage:target/cucumber-usage.json"},
 	
       //tags ={"@TC_001,@TC_002,@TC_003","~@TC_04"},
-     tags ={"@TC_001","~@TC_002","~@TC_003","~@TC_04"},
+     tags ={"~@TC_001","~@TC_002","~@TC_003","~@TC_004","~@TC_005","@TC_006"},
       dryRun=false,
 	  monochrome = false
 )
