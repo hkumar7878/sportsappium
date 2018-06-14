@@ -54,7 +54,10 @@ public void click_on_Men_button() throws Throwable {
 
 @Then("^verify Men Product page is displayed$")
 public void verify_Men_Product_page_is_displayed() throws Throwable {
- 
+	String stepName="Verify Men Product Page";
+	String passResult="Men Product Page is displayed successfully";
+	String failResult="Men Product page is not displayed";
+	objMenProdPage.verifyMenProPageDisplay(TestBase.deviceID, stepName, passResult, failResult);
     
 }
 

@@ -25,7 +25,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
         "usage:target/cucumber-usage.json"},
 	
       //tags ={"@TC_001,@TC_002,@TC_003","~@TC_04"},
-     tags ={"@TC_001","~@TC_002","~@TC_003","~@TC_004","~@TC_005","~@TC_006"},
+     tags ={"~@TC_001","@TC_002","~@TC_003","~@TC_004","~@TC_005","~@TC_006"},
       dryRun=false,
 	  monochrome = false
 )

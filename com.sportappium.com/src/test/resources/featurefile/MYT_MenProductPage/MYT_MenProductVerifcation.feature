@@ -33,12 +33,15 @@ Then verify Men button displays on home page
 Then click on Men button
 Then verify Men Product page is displayed
 
-@TC_003
-Scenario: To verify the display of Women Section
+@TC_002
+Scenario: To verify the various sections such as Clothing, Footwear, Accessories etc.
 
 Given navigate to web site
 Then user verifies home page is displayed
-Then verify Women drop down is displayed on Home Page
+Then verify Men button displays on home page
+Then click on Men button
+Then verify Men Product page is displayed
+Then verify correct men sections links are displayed
 
 @TC_004
 Scenario: To verify the display of Sports Section
