@@ -16,7 +16,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import ErrorCollectors.ErrorCollector;
 import io.appium.java_client.AppiumDriver;
 
-public class PG_MY_MenProductPage extends TestBase{
+public class PG_MY_X_Generic_ProductPage <X> extends TestBase{
 	
 	AppiumDriver driver;
 	private final Logger log = LoggerHelper.getLogger(PG_HomePage_AndroidWeb.class);
@@ -30,7 +30,7 @@ public class PG_MY_MenProductPage extends TestBase{
 	String strAccessories;
 	String strPersonalCare;
 	
-	public PG_MY_MenProductPage(AppiumDriver driver)
+	public PG_MY_X_Generic_ProductPage(AppiumDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

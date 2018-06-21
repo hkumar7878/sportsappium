@@ -63,7 +63,7 @@ public class GenericHelper {
 		{
 			log.info(ex);
 			System.out.println(ex.getMessage());
-			log.info("Throwing run time exception for Element is not displayed for elemenet  " + element.getTagName().toString());
+			//log.info("Throwing run time exception for Element is not displayed for elemenet  " + element.getTagName().toString());
 			//TestBase.strErrMsg_GenLib=ex.getMessage()+ element.getTagName().toString();
 			TestBase.strErrMsg_GenLib=ex.getMessage();
 			System.out.println(TestBase.strErrMsg_GenLib);

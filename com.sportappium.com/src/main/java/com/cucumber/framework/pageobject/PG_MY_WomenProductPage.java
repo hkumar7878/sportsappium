@@ -16,7 +16,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import ErrorCollectors.ErrorCollector;
 import io.appium.java_client.AppiumDriver;
 
-public class PG_MY_MenProductPage extends TestBase{
+public class PG_MY_WomenProductPage extends TestBase{
 	
 	AppiumDriver driver;
 	private final Logger log = LoggerHelper.getLogger(PG_HomePage_AndroidWeb.class);
@@ -30,7 +30,7 @@ public class PG_MY_MenProductPage extends TestBase{
 	String strAccessories;
 	String strPersonalCare;
 	
-	public PG_MY_MenProductPage(AppiumDriver driver)
+	public PG_MY_WomenProductPage(AppiumDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -67,12 +67,11 @@ public class PG_MY_MenProductPage extends TestBase{
 		catch(Exception e)
 		{
 			System.out.println(e.getMessage());
-			String errMsg=TestBase.strErrMsg_GenLib;
 			log.info(e.getMessage());
 			if(deviceID.contains("42003a0fd3148479"))		
-				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,TestBase.strErrMsg_GenLib);		
+				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,e.getMessage());		
 			else if(deviceID.contains("emulator-5554"))
-				androidEmulator_logger1.log(LogStatus.FAIL, stepName,TestBase.strErrMsg_GenLib);
+				androidEmulator_logger1.log(LogStatus.FAIL, stepName,e.getMessage());
 			ErrorCollector.addVerificationFailure(e);
 		}
 
@@ -96,10 +95,9 @@ public class PG_MY_MenProductPage extends TestBase{
 			log.info("---------Checking Men Product options on Men Product Page------------");
 			strClothing=generichelper.readValueFromElement(lnkClothing);
 			strFootWear=generichelper.readValueFromElement(lnkFootwear);
-			//if(strClothing.trim().equals(prodOptions[0]) && GenericHelper.isDisplayed(lnkClothing)&& strFootWear.trim().equals(prodOptions[1]) && GenericHelper.isDisplayed(lnkFootwear))
-			if(strClothing.trim().equals(prodOptions[0]) && GenericHelper.isDisplayed(lnkClothing))
+			if(strClothing.trim().equals(prodOptions[0]) && GenericHelper.isDisplayed(lnkClothing)&& strFootWear.trim().equals(prodOptions[1]) && GenericHelper.isDisplayed(lnkFootwear))
 				flag=true;
-			
+			//flag=GenericHelper.isDisplayed(lnkClothing);
 			Assert.assertTrue(flag, "Men Product page is not displayed");
 			System.out.println("---------Men Product page is displayed---------");
 			if(deviceID.contains("42003a0fd3148479"))

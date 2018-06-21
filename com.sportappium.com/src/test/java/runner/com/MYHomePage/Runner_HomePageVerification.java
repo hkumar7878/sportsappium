@@ -56,8 +56,6 @@ public class Runner_HomePageVerification extends TestBase{
 		System.out.println("After executing the test");
 	}
 	
-	
-	
 	@BeforeTest
 	@Parameters({"deviceID"})
     public void onBeforeTestMobile(String deviceID,ITestContext testContext)
