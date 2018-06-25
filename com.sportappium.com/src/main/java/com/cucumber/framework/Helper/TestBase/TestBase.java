@@ -43,23 +43,19 @@ public class TestBase {
 	public static String XMLtestCaseName;
 	String app_URL=null;
 	public static String strErrMsg_GenLib;
-	static DesiredCapabilities cap= new DesiredCapabilities();
-	
-	//public static ExtentReports report;
+	static DesiredCapabilities cap= new DesiredCapabilities();	
 	public static ExtentReports androidEmulatorRPT;
-	
 	public static ExtentReports androidReadDeviceRPT;
-    //public static ExtentReports report1;
-    
-   // public static ExtentTest FF_logger;
     public static ExtentTest androidEmulator_logger1;
-    
-   // public static ExtentTest CH_logger;
     public static ExtentTest androidReadDevice_logger1;
     public static String scenarioName;
     public static URL url;
-    //String XMLtestCaseName;
-    
+  
+    /*
+     * 'Before' scenario will run BEFFORE executing EACH scenario defined in the feature file
+     * 
+     * 
+     */
     @Before
 	public void before(Scenario scenario) throws Exception
 	{
@@ -70,12 +66,15 @@ public class TestBase {
 		ObjectRepo.reader=new PropertyFileReader();
 		String bName=ObjectRepo.reader.getBrowserName();
 		System.out.println("Inside Before method");
-	    //actionBeforeClass.beforeScenarioAction(bName,scenarioName,"test");
 		actionBeforeClass.beforeScenarioAction(XMLtestCaseName,scenarioName,"test");
-	   // setUpAndroidDriver(String deviceID,String tcName);
 	    setUpAndroidDriver(deviceID,XMLtestCaseName);
 	}
 	
+    /*
+     * 'After' scenario will run after finishing EACH scenario defined in the feature file
+     * 
+     * 
+     */
 	@After
 	public void after(Scenario scenario) throws Exception
 	{

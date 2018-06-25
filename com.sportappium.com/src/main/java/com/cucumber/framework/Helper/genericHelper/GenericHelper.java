@@ -1,16 +1,29 @@
 package com.cucumber.framework.Helper.genericHelper;
 
-import java.util.ArrayList;
+import java.io.File;
 import java.util.List;
-
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
-
 import org.apache.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Random;
+import java.util.Set;
+import org.apache.commons.io.FileUtils;
 
 public class GenericHelper {
 
@@ -57,7 +70,7 @@ public class GenericHelper {
 		{
 			element.isDisplayed();
 			log.info("Element is displayed " + element.getText().toString());
-			return true;
+			return false;
 		}
 		catch (Exception ex)
 		{
@@ -67,7 +80,7 @@ public class GenericHelper {
 			//TestBase.strErrMsg_GenLib=ex.getMessage()+ element.getTagName().toString();
 			TestBase.strErrMsg_GenLib=ex.getMessage();
 			System.out.println(TestBase.strErrMsg_GenLib);
-			return false;
+			return true;
 		}
 	}
 	
@@ -141,4 +154,43 @@ public class GenericHelper {
 		return flag;
 		
 	}
+	
+	public static String captureScreenShot3(WebDriver driver, String screenShotName,String folderName,String deviceID,String modelName)
+    {
+        String dest = null;
+        String timeStamp;
+        File dest1=null;
+        
+    	/*File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    	timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());*/
+    
+        try 
+        {    
+        	File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    		timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());   
+            if(deviceID.equalsIgnoreCase("42003a0fd3148479"))
+            {
+            	dest=System.getProperty("user.dir")+"\\ScreenShots\\"+ modelName +"\\"+folderName+"\\"+timeStamp+"__"+screenShotName+".png";
+            	dest1=new File (System.getProperty("user.dir")+"\\ScreenShots\\"+ modelName +"\\"+folderName +"\\"+timeStamp+"__"+screenShotName+".png");
+            	FileUtils.copyFile(scrFile, dest1);
+                System.out.println("Screenshot take");
+
+            }
+            if(deviceID.equalsIgnoreCase("chrome"))
+            {
+            	dest=System.getProperty("user.dir")+"\\Screenshots\\"+ folderName +"\\"+deviceID +"\\"+screenShotName+".png";
+                File destination=new File(dest);
+               // FileUtils.copyFile(source, destination);
+                System.out.println("Screenshot take");
+
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println("Exception while taking a screen shot"+ e.getMessage());
+            return e.getMessage();
+        }
+
+        return dest;
+}
 }

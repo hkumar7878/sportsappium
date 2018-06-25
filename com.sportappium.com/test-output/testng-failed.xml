@@ -8,15 +8,15 @@
   <test name="Samsung7(failed)">
     <parameter name="deviceID" value="42003a0fd3148479"/>
     <classes>
-      <class name="runner.com.MYMenProductPage.Runner_MenProductVerification">
+      <class name="runner.com.MYHomePage.Runner_HomePageVerification">
         <methods>
-          <include name="afterSuite"/>
+          <include name="runCukes"/>
+          <include name="onBeforeTestMobile"/>
           <include name="beforeSuite"/>
           <include name="afterTest"/>
-          <include name="onBeforeTestMobile"/>
-          <include name="runCukes"/>
+          <include name="afterSuite"/>
         </methods>
-      </class> <!-- runner.com.MYMenProductPage.Runner_MenProductVerification -->
+      </class> <!-- runner.com.MYHomePage.Runner_HomePageVerification -->
     </classes>
   </test> <!-- Samsung7(failed) -->
 </suite> <!-- Failed suite [Functional Test Suite_SamsungReal] -->

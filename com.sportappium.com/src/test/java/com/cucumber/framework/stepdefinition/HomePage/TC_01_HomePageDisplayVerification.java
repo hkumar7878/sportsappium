@@ -26,7 +26,7 @@ private final Logger log= LoggerHelper.getLogger(TC_01_HomePageDisplayVerificati
 		String stepName="Verify the Adidas Home page";
 		String passResult="Adidas home page is displayed";
 		String failResult="Adidas home page is not displayed";
-		objMYhomePage.verifyHomePage(TestBase.deviceID,stepName,passResult,failResult);
+		objMYhomePage.verifyHomePage(TestBase.deviceID,stepName,passResult,failResult,"Home Page");
 	    
 	}
 

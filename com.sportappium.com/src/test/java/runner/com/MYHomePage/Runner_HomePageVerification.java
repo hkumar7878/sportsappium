@@ -18,7 +18,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 
-@CucumberOptions(features={"classpath:featurefile/MYT_MenProductPage/MYT_MenProductVerifcation.feature"}
+@CucumberOptions(features={"classpath:featurefile/MyntraHomePage/MYT_HomePage.feature"}
 ,glue={"classpath:com.cucumber.framework.stepdefinition",
 	   "classpath:com.cucumber.framework.Helper"},
 		plugin = {"html:target/cucumber-html-report",
@@ -26,9 +26,9 @@ import cucumber.api.testng.TestNGCucumberRunner;
         "usage:target/cucumber-usage.json"},
 	
       //tags ={"@TC_001,@TC_002,@TC_003","~@TC_04"},
-     tags ={"~@TC_001","@TC_002","~@TC_003","~@TC_004","~@TC_005","~@TC_006"},
-      dryRun=true,
-	  monochrome = false
+        tags ={"@TC_001","~@TC_002","~@TC_003","~@TC_004","~@TC_005","~@TC_006"},
+        dryRun=false,
+        monochrome = false
 )
 
 public class Runner_HomePageVerification extends TestBase{
@@ -39,13 +39,13 @@ public class Runner_HomePageVerification extends TestBase{
 	@BeforeSuite
 	public void beforeSuite()
 	{
-		System.out.println("Before running the suite-CarDekho Website");
+		System.out.println("Before running the dsuite for Myntra Website");
 	}
 	
 	@AfterSuite
 	public void afterSuite()
 	{
-		System.out.println("After running the suite-Car Dekho Web site");
+		System.out.println("After running the dsuite for Myntra Website");
 	}
 	
 	@AfterTest
@@ -55,6 +55,12 @@ public class Runner_HomePageVerification extends TestBase{
 		actionAfterClassObj.actionAfterTest(testbaseObj.scenarioName, XMLtestCaseName);
 		System.out.println("After executing the test");
 	}
+	
+	/*
+	 * Purpose of following BeforeTest method is to just only initialize the Extent Report. This method will be executed before executing any classes 
+	 * defined inside the Test tag in TestNG XML.
+	 */
+	
 	
 	@BeforeTest
 	@Parameters({"deviceID"})

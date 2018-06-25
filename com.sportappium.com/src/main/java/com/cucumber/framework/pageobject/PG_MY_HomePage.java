@@ -51,7 +51,7 @@ public class PG_MY_HomePage extends TestBase{
 	@FindBy(xpath="//li[@class='main-items itemexpanded']")
 	List<WebElement> menuMenOptions;
 	
-	public void verifyHomePage(String deviceID,String stepName,String passResult,String failResult)
+	public void verifyHomePage(String deviceID,String stepName,String passResult,String failResult,String HomePage)
 	{
 		try
 		{
@@ -74,10 +74,13 @@ public class PG_MY_HomePage extends TestBase{
 		catch(Exception e)
 		{
 			System.out.println(e.getMessage());
+			String screenshot_path=GenericHelper.captureScreenShot3(driver, HomePage,HomePage,deviceID,"Samsung7");
 			log.info(e.getMessage());
 			if(deviceID.contains("42003a0fd3148479"))
 			{
+				String fail_image=androidReadDevice_logger1.addScreenCapture(screenshot_path);
 				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,strErrMsg_GenLib);
+				//androidReadDevice_logger1.log(LogStatus.FAIL,stepName,fail_image);
 			}
 			
 			else if(deviceID.contains("emulator-5554"))
@@ -90,10 +93,13 @@ public class PG_MY_HomePage extends TestBase{
 		catch (AssertionError e)
 		{
 			System.out.println(e.getMessage());
+			String screenshot_path=GenericHelper.captureScreenShot3(driver, HomePage,HomePage,deviceID,"Samsung7");
 			log.info(e.getMessage());
 			if(deviceID.contains("42003a0fd3148479"))
 			{
-				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,failResult);				
+				String fail_image=androidReadDevice_logger1.addScreenCapture(screenshot_path);
+				//androidReadDevice_logger1.log(LogStatus.FAIL, stepName,strErrMsg_GenLib);
+				androidReadDevice_logger1.log(LogStatus.FAIL, stepName,fail_image);
 			}
 			
 			else if(deviceID.contains("emulator-5554"))
