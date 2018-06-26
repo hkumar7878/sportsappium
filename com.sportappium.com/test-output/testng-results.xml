@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Functional Test Suite_SamsungReal" duration-ms="104792" started-at="2018-06-22T04:00:37Z" finished-at="2018-06-22T04:02:22Z">
+  <suite name="Functional Test Suite_SamsungReal" duration-ms="44326" started-at="2018-06-26T17:30:18Z" finished-at="2018-06-26T17:31:02Z">
     <groups>
     </groups>
-    <test name="Samsung7" duration-ms="104792" started-at="2018-06-22T04:00:37Z" finished-at="2018-06-22T04:02:22Z">
+    <test name="Samsung7" duration-ms="44326" started-at="2018-06-26T17:30:18Z" finished-at="2018-06-26T17:31:02Z">
       <class name="runner.com.MYHomePage.Runner_HomePageVerification">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:runner.com.MYHomePage.Runner_HomePageVerification@561b6512]" name="beforeSuite" is-config="true" duration-ms="15" started-at="2018-06-22T09:30:37Z" finished-at="2018-06-22T09:30:37Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:runner.com.MYHomePage.Runner_HomePageVerification@6043cd28]" name="beforeSuite" is-config="true" duration-ms="41" started-at="2018-06-26T23:00:18Z" finished-at="2018-06-26T23:00:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="onBeforeTestMobile(java.lang.String, org.testng.ITestContext)[pri:0, instance:runner.com.MYHomePage.Runner_HomePageVerification@561b6512]" name="onBeforeTestMobile" is-config="true" duration-ms="209" started-at="2018-06-22T09:30:37Z" finished-at="2018-06-22T09:30:37Z">
+        <test-method status="PASS" signature="onBeforeTestMobile(java.lang.String, org.testng.ITestContext)[pri:0, instance:runner.com.MYHomePage.Runner_HomePageVerification@6043cd28]" name="onBeforeTestMobile" is-config="true" duration-ms="678" started-at="2018-06-26T23:00:18Z" finished-at="2018-06-26T23:00:19Z">
           <params>
             <param index="0">
               <value>
@@ -20,14 +20,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@465b38e6]]>
+                <![CDATA[org.testng.TestRunner@383790cf]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onBeforeTestMobile -->
-        <test-method status="FAIL" signature="runCukes()[pri:0, instance:runner.com.MYHomePage.Runner_HomePageVerification@561b6512]" name="runCukes" duration-ms="104109" started-at="2018-06-22T09:30:37Z" finished-at="2018-06-22T09:32:22Z">
+        <test-method status="FAIL" signature="runCukes()[pri:0, instance:runner.com.MYHomePage.Runner_HomePageVerification@6043cd28]" name="runCukes" duration-ms="43217" started-at="2018-06-26T23:00:19Z" finished-at="2018-06-26T23:01:02Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Myntra home page is not displayed expected [true] but found [false]]]>
@@ -85,11 +85,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runCukes -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:runner.com.MYHomePage.Runner_HomePageVerification@561b6512]" name="afterTest" is-config="true" duration-ms="453" started-at="2018-06-22T09:32:22Z" finished-at="2018-06-22T09:32:22Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:runner.com.MYHomePage.Runner_HomePageVerification@6043cd28]" name="afterTest" is-config="true" duration-ms="403" started-at="2018-06-26T23:01:02Z" finished-at="2018-06-26T23:01:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:runner.com.MYHomePage.Runner_HomePageVerification@561b6512]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-06-22T09:32:22Z" finished-at="2018-06-22T09:32:22Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:runner.com.MYHomePage.Runner_HomePageVerification@6043cd28]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-06-26T23:01:02Z" finished-at="2018-06-26T23:01:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
