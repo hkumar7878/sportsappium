@@ -50,7 +50,7 @@
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-testng</artifactId>
 			<version>1.2.5</version>
-			<scope>test</scope>
+			<scope>compile</scope>
 			<exclusions>
 				<exclusion>
 					<groupId>junit</groupId>
@@ -62,14 +62,14 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.9.8</version>
-			<scope>test</scope>
+			<scope>compile</scope>
 		</dependency>
 
 <dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.5</version>
-			<scope>test</scope>
+			<scope>compile</scope>
 </dependency>
 
 <dependency>
