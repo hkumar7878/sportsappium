@@ -143,8 +143,8 @@
 				<version>2.19.1</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>${project.basedir}\MYT_HomePageAndroid_MobileAppSamsung_RealDevicetestng.xml</suiteXmlFile> 
-					<!-- <suiteXmlFile>com.sportappium.com\MYT_HomePageAndroid_MobileAppSamsung_RealDevicetestng.xml</suiteXmlFile> -->
+					<!--	<suiteXmlFile>${project.basedir}\MYT_HomePageAndroid_MobileAppSamsung_RealDevicetestng.xml</suiteXmlFile> -->
+					 <suiteXmlFile>src/test/resources/MYT_HomePageAndroid_MobileAppSamsung_RealDevicetestng.xml</suiteXmlFile> 
 					</suiteXmlFiles>					
 				</configuration>
 			</plugin>
