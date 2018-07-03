@@ -30,7 +30,7 @@ public class ActionBeforeClass extends TestBase{
 		}
 	}*/
 	
-public void beforeScenarioAction(String deviceName,String scenarioName,String tcDesc)
+	public void beforeScenarioAction(String deviceName,String scenarioName,String tcDesc)
 	
 	{
 		
