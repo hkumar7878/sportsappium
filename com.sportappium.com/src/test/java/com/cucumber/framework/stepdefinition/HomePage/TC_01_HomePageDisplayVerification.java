@@ -21,7 +21,7 @@ private final Logger log= LoggerHelper.getLogger(TC_01_HomePageDisplayVerificati
 	@Then("^user verifies home page is displayed$")
 	public void user_verifies_home_page_is_displayed() throws Throwable {
 		driver=TestBase.driver;
-		System.out.println(driver.hashCode());
+		//System.out.println(driver.hashCode());
 		objMYhomePage= new PG_MY_HomePage(driver);
 		String stepName="Verify the Adidas Home page";
 		String passResult="Adidas home page is displayed";
