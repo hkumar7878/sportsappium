@@ -8,7 +8,7 @@
  <test name="Samsung7" >
   	<parameter name="deviceID" value="42003a0fd3148479"></parameter> 
  		<classes> 				
-				<class name="com.sportappium.com.runner.com.MYHomePage.Runner_HomePageVerification"></class>					            				
+				<class name="com.sportappium.com.src.test.java.runner.com.MYHomePage.Runner_HomePageVerification"></class>					            				
 		</classes>    			
  </test>
 </suite> <!-- Suite -->
